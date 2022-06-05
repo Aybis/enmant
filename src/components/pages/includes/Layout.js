@@ -135,7 +135,7 @@ export default function Layout({ children }) {
             </div>
           </div>
         </header>
-        <div className="relative py-12 px-8 mx-auto container bg-zinc-50 dark:bg-zinc-900">
+        <div className="relative py-4 px-8 mx-auto container bg-zinc-50 dark:bg-zinc-900">
           {children}
         </div>
       </main>
