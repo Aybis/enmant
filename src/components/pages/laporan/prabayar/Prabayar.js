@@ -1,11 +1,11 @@
-import { PlusIcon, SearchIcon } from '@heroicons/react/solid';
+import { SearchIcon } from '@heroicons/react/solid';
 import React from 'react';
 import Button from '../../../atoms/Button';
-import TablePascabayar from './TablePascabayar';
+import TablePrabayar from './TablePrabayar';
 
-export default function Pascabayar() {
+export default function Prabayar() {
   return (
-    <div className="relative mt-8 bg-white dark:bg-zinc-800 rounded-sm p-4 overflow-auto">
+    <div className="relative mt-8 bg-white dark:bg-zinc-800 rounded-sm p-4">
       <div className="relative flex justify-between mb-6 items-center space-x-3">
         {/* Search Section */}
         <div className="relative flex space-x-3">
@@ -24,15 +24,10 @@ export default function Pascabayar() {
           </Button>
         </div>
         {/* End Search Section */}
-
-        <div className="relative">
-          <Button isAnimated moreClass={'text-sm py-2 space-x-2 relative'}>
-            <PlusIcon className="h-5 mr-2" />
-            Pasang Baru
-          </Button>
-        </div>
       </div>
-      <TablePascabayar />
+      <div className="relative overflow-auto">
+        <TablePrabayar />
+      </div>
     </div>
   );
 }

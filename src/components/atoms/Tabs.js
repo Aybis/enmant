@@ -1,25 +1,15 @@
 import { Link, useLocation } from 'react-router-dom';
 
-const tabs = [
-  { name: 'Prabayar', href: '/management', count: '4', current: true },
-  {
-    name: 'Pascabayar',
-    href: '/management/pascabayar',
-    count: '6',
-    current: false,
-  },
-];
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Tabs() {
+export default function Tabs({ tabs }) {
   const location = useLocation();
 
   return (
     <div className="hidden sm:block">
-      <div className=" w-fit border-gray-200">
+      <div className=" border-gray-200 dark:border-zinc-700 border-b">
         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
           {tabs.map((tab) => (
             <Link
@@ -27,9 +17,9 @@ export default function Tabs() {
               to={tab.href}
               className={classNames(
                 location.pathname === tab.href
-                  ? 'border-blue-500 text-blue-600 dark:text-blue-200 dark:font-medium dark:tracking-wide'
+                  ? 'border-blue-500 text-blue-600 dark:text-blue-200 dark:font-medium dark:leading-relaxed'
                   : 'border-transparent text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-200',
-                'whitespace-nowrap flex py-4 px-1 border-b-2 font-medium text-base leading-relaxed tracking-wide transition-all duration-300 ease-in-out',
+                'whitespace-nowrap flex py-4 px-1 border-b-2 font-medium text-base leading-relaxed transition-all duration-300 ease-in-out',
               )}
               aria-current={
                 location.pathname === tab.href ? 'page' : undefined

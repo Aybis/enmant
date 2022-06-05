@@ -3,12 +3,12 @@ import { Outlet } from 'react-router-dom';
 import { Tabs } from '../../atoms';
 import { Layout } from '../includes';
 
-export default function Management() {
+export default function Laporan() {
   const tabs = [
-    { name: 'Prabayar', href: '/management', count: '4', current: true },
+    { name: 'Prabayar', href: '/laporan', count: '4', current: true },
     {
       name: 'Pascabayar',
-      href: '/management/pascabayar',
+      href: '/laporan/pascabayar',
       count: '6',
       current: false,
     },
@@ -20,7 +20,7 @@ export default function Management() {
         {/* Heading Container */}
         <div className="relative">
           <h1 className="text-2xl font-semibold text-zinc-800 dark:text-zinc-100">
-            Management Data
+            Laporan
           </h1>
         </div>
         {/* Content Container */}

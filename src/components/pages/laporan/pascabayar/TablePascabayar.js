@@ -1,10 +1,10 @@
-import { PencilAltIcon, TrashIcon } from '@heroicons/react/solid';
+import { ClipboardIcon } from '@heroicons/react/solid';
 import React, { useEffect, useState } from 'react';
 import { Loading, TableBody, TableContent, TableHeading } from '../../../atoms';
 import Button from '../../../atoms/Button';
-import { data } from './data';
+import { dataPascabayar } from './data';
 
-export default function TablePrabayar() {
+export default function TablePascabayar() {
   const [loading, setloading] = useState(false);
 
   useEffect(() => {
@@ -17,20 +17,22 @@ export default function TablePrabayar() {
       clearTimeout(timeout);
     };
   }, []);
+
   return (
     <TableHeading
       theading={[
-        'No',
-        'Action',
-        'ID PELANGGAN',
-        'NO METER',
-        'NAMA PEL',
-        'WITEL',
-        'AREA',
+        'NO',
+        'ACTION',
+        'ID PLN',
+        'NAMA PELANGGAN',
         'TARIF',
         'DAYA',
-        'KETERANGAN',
-        'CEK',
+        'WITEL',
+        'AREA',
+        ' METER AWAL ',
+        ' METER AKHIR ',
+        ' TAGIHAN ',
+        ' ADMIN ',
       ]}>
       {loading ? (
         <TableBody>
@@ -42,29 +44,25 @@ export default function TablePrabayar() {
           </TableContent>
         </TableBody>
       ) : (
-        data?.map((item, index) => (
+        dataPascabayar.slice(0, 10).map((item, index) => (
           <TableBody key={index}>
             <TableContent>{index + 1}</TableContent>
             <TableContent addClassChild={'flex space-x-3 whitespace-nowrape'}>
-              <Button type="danger" moreClass={'text-sm py-2 relative'}>
-                <TrashIcon className="text-white h-4 mr-2" />
-                Bongkar
-              </Button>
-              <Button type="edit" moreClass={'text-sm py-2 relative'}>
-                <PencilAltIcon className="text-white h-4 mr-2" />
-                Ubah
+              <Button type="view" moreClass={'text-sm py-2 relative'}>
+                <ClipboardIcon className="text-white h-4 mr-2" />
+                View
               </Button>
             </TableContent>
-
-            <TableContent>{item['ID PELANGGAN']}</TableContent>
-            <TableContent>{item['NAMA PEL']}</TableContent>
-            <TableContent>{item['NAMA PEL']}</TableContent>
-            <TableContent>{item['WITEL']}</TableContent>
-            <TableContent>{item['AREA']}</TableContent>
+            <TableContent>{item['ID PLN']}</TableContent>
+            <TableContent>{item['NAMA PELANGGAN']}</TableContent>
             <TableContent>{item['TARIF']}</TableContent>
             <TableContent>{item['DAYA']}</TableContent>
-            <TableContent>{item['KETERANGAN']}</TableContent>
-            <TableContent>{item['CEK']}</TableContent>
+            <TableContent>{item['WITEL']}</TableContent>
+            <TableContent>{item['AREA']}</TableContent>
+            <TableContent>{item['METER AWAL']}</TableContent>
+            <TableContent>{item['METER AKHIR']}</TableContent>
+            <TableContent>{item['TAGIHAN']}</TableContent>
+            <TableContent>{item['ADMIN']}</TableContent>
           </TableBody>
         ))
       )}

@@ -1,4 +1,4 @@
-import { PlusIcon, SearchIcon } from '@heroicons/react/solid';
+import { SearchIcon } from '@heroicons/react/solid';
 import React from 'react';
 import Button from '../../../atoms/Button';
 import TablePascabayar from './TablePascabayar';
@@ -24,15 +24,10 @@ export default function Pascabayar() {
           </Button>
         </div>
         {/* End Search Section */}
-
-        <div className="relative">
-          <Button isAnimated moreClass={'text-sm py-2 space-x-2 relative'}>
-            <PlusIcon className="h-5 mr-2" />
-            Pasang Baru
-          </Button>
-        </div>
       </div>
-      <TablePascabayar />
+      <div className="relative overflow-x-auto">
+        <TablePascabayar />
+      </div>
     </div>
   );
 }

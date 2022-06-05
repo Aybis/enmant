@@ -6,6 +6,8 @@ import {
   Management,
   Prabayar,
   Pascabayar,
+  LaporanPrabayar,
+  LaporanPascabayar,
 } from './components/pages';
 import ToastHandler from './utils/hooks/useToast';
 
@@ -15,7 +17,14 @@ function App() {
       <ToastHandler />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/laporan" element={<Laporan />} />
+        {/* Link Laporan */}
+        <Route path="/laporan" element={<Laporan />}>
+          <Route index element={<LaporanPrabayar />} />
+          <Route path="pascabayar" element={<LaporanPascabayar />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+        {/* End Link Laporan*/}
+
         {/* Link Manageement*/}
         <Route path="/management" element={<Management />}>
           <Route index element={<Prabayar />} />

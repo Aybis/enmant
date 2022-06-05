@@ -18,7 +18,7 @@ export default function Table({ data }) {
           </p>
         </div>
       </div>
-      <div className="mt-4 flex flex-col">
+      <div className="mt-4 flex flex-col overflow-x-auto">
         <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
             <div className="overflow-hidden ring-1 ring-black dark:ring-zinc-700 dark:ring-opacity-100 ring-opacity-5 md:rounded-sm">

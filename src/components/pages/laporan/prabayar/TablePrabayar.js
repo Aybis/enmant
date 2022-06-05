@@ -1,4 +1,4 @@
-import { PencilAltIcon, TrashIcon } from '@heroicons/react/solid';
+import { ClipboardIcon } from '@heroicons/react/solid';
 import React, { useEffect, useState } from 'react';
 import { Loading, TableBody, TableContent, TableHeading } from '../../../atoms';
 import Button from '../../../atoms/Button';
@@ -46,13 +46,9 @@ export default function TablePrabayar() {
           <TableBody key={index}>
             <TableContent>{index + 1}</TableContent>
             <TableContent addClassChild={'flex space-x-3 whitespace-nowrape'}>
-              <Button type="danger" moreClass={'text-sm py-2 relative'}>
-                <TrashIcon className="text-white h-4 mr-2" />
-                Bongkar
-              </Button>
-              <Button type="edit" moreClass={'text-sm py-2 relative'}>
-                <PencilAltIcon className="text-white h-4 mr-2" />
-                Ubah
+              <Button type="view" moreClass={'text-sm py-2 relative'}>
+                <ClipboardIcon className="text-white h-4 mr-2" />
+                View
               </Button>
             </TableContent>
 
