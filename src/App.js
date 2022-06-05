@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import {
+  Laporan,
+  Home,
+  NotFound,
+  Management,
+  Prabayar,
+  Pascabayar,
+} from './components/pages';
+import ToastHandler from './utils/hooks/useToast';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToastHandler />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/laporan" element={<Laporan />} />
+        {/* Link Manageement*/}
+        <Route path="/management" element={<Management />}>
+          <Route index element={<Prabayar />} />
+          <Route path="pascabayar" element={<Pascabayar />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+        {/* End Link Manageement*/}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 
