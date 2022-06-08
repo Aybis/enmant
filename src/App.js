@@ -8,6 +8,7 @@ import {
   Pascabayar,
   LaporanPrabayar,
   LaporanPascabayar,
+  CRM,
 } from './components/pages';
 import ToastHandler from './utils/hooks/useToast';
 
@@ -17,6 +18,7 @@ function App() {
       <ToastHandler />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<CRM />} />
         {/* Link Laporan */}
         <Route path="/laporan" element={<Laporan />}>
           <Route index element={<LaporanPrabayar />} />

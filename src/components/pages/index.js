@@ -6,3 +6,4 @@ export { default as Pascabayar } from './management/pascabayar/Pascabayar';
 export { default as Prabayar } from './management/prabayar/Prabayar';
 export { default as LaporanPrabayar } from './laporan/prabayar/Prabayar';
 export { default as LaporanPascabayar } from './laporan/pascabayar/Pascabayar';
+export { default as CRM } from './CRM';

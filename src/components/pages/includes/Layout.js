@@ -108,7 +108,7 @@ export default function Layout({ children }) {
           <div className="relative flex justify-between items-center">
             <div className="relative text-left">
               <p className="text-sm font-light text-zinc-400 dark:text-zinc-300">
-                Welcome back,
+                Welcome back,t
               </p>
               <p className="text-lg font-semibold text-zinc-700 dark:text-zinc-200 mt-1">
                 Abdul Muchtar Astria
