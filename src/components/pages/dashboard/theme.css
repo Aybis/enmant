@@ -31,9 +31,9 @@ body {
   margin-bottom: 6px;
 }
 .svg-funnel-js .svg-funnel-js__labels .svg-funnel-js__label .label__title {
-  font-size: 12px;
-  font-weight: 700;
-  color: #d4d4d8;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fafafa;
 }
 .svg-funnel-js .svg-funnel-js__labels .svg-funnel-js__label .label__percentage {
   font-size: 16px;

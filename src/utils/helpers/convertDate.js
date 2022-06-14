@@ -18,6 +18,13 @@ export const convertDate = (type, time) => {
           : date.getMonth() + 1
       }-${date.getDate() < 10 ? '0' + date.getDate() : date.getDate()}`;
 
+    case 'ymden':
+      return `${date.getDate() < 10 ? '0' + date.getDate() : date.getDate()}/${
+        date.getMonth() + 1 < 10
+          ? '0' + (date.getMonth() + 1)
+          : date.getMonth() + 1
+      }/${date.getFullYear()}`;
+
     case 'now':
       return date.toLocaleDateString('id-ID', options);
 

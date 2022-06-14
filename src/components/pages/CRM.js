@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { convertDate } from '../../utils/helpers/convertDate';
 import RenderIf from '../../utils/hooks/RenderIf';
+import Own from './crm/Own';
 import Funnel from './dashboard/Funnel';
 import { Layout } from './includes';
 
@@ -21,27 +22,27 @@ export default function CRM() {
     {
       ubis: 'ENT',
       nilai: 123456000,
-      date: convertDate('now'),
+      date: convertDate('ymden'),
     },
     {
       ubis: 'GOV',
       nilai: 123456000,
-      date: convertDate('yesterday'),
+      date: convertDate('ymden'),
     },
     {
       ubis: 'TSB',
       nilai: 123456000,
-      date: convertDate('now'),
+      date: convertDate('ymden'),
     },
     {
       ubis: 'E-COM',
       nilai: 123456000,
-      date: convertDate('now'),
+      date: convertDate('ymden'),
     },
     {
       ubis: 'TSB',
       nilai: 123456000,
-      date: convertDate('now'),
+      date: convertDate('ymden'),
     },
   ];
 
@@ -93,20 +94,67 @@ export default function CRM() {
       },
       data: [
         [32.19, 2.53, 329.03, 17.69, 381.45],
-        [31.59, 2.18, 312.73, 17.69, 364.19],
         [12, 3, 53, 7, 75],
       ],
     },
     {
       name: {
-        title: 'Convertion Ratio',
+        title: 'Convertion Ratio (F5/F3)',
         sub: '',
       },
-      data: [[37.69, 100.0, 92.95, 48.44, 79.47]],
+      data: [[50.00000000001, 100.0, 50, 80, 80.01]],
+    },
+  ];
+
+  const dataHeaderOc = [
+    {
+      name: 'New GTMA',
+    },
+    {
+      name: 'GTMA',
+    },
+    {
+      name: 'Own Channel',
+    },
+    {
+      name: 'TGU',
+    },
+    {
+      name: 'TOTAL',
+    },
+  ];
+
+  const dataHeaderUbis = [
+    {
+      name: 'ENT',
+      alias: 'Enterprise',
+    },
+    {
+      name: 'GOV',
+      alias: 'Goverment',
+    },
+    {
+      name: 'TSB',
+      alias: 'Telco & SME Business',
+    },
+    {
+      name: 'E-COM',
+      alias: 'E-Commerce',
+    },
+    {
+      name: 'TOTAL',
+      alias: '',
     },
   ];
   return (
     <Layout>
+      {/* Heading Container */}
+      <div className="relative">
+        <h1 className="text-3xl font-semibold text-zinc-800 dark:text-zinc-100">
+          Sales Funnel
+        </h1>
+      </div>
+
       {/* Filter Periode */}
       <div className="relative mx-auto container max-w-md grid grid-cols-2 gap-4">
         <div className="relative">
@@ -120,7 +168,7 @@ export default function CRM() {
             name="start"
             onChange={handlerChangePeriode}
             value={formPeriode.start}
-            className="px-4 py-2 text-sm w-full rounded mt-1 bg-white dark:bg-zinc-700 dark:text-zinc-50 pr-4 focus:border-blue-500 cursor-pointer border-transparent"
+            className="px-4 py-2 text-sm w-full rounded mt-1 bg-white shadow-lg shadow-gray-200/90 dark:bg-zinc-700 dark:text-zinc-50 pr-4 focus:border-blue-500 cursor-pointer border-transparent"
           />
         </div>
         <div className="relative">
@@ -135,14 +183,25 @@ export default function CRM() {
             onChange={handlerChangePeriode}
             value={formPeriode.end}
             max={formPeriode.end}
-            className="px-4 py-2 text-sm w-full rounded mt-1 bg-white dark:bg-zinc-700 dark:text-zinc-50 pr-4 focus:border-blue-500 cursor-pointer border-transparent"
+            className="px-4 py-2 text-sm w-full rounded mt-1 bg-white shadow-lg shadow-gray-200/90 dark:bg-zinc-700 dark:text-zinc-50 pr-4 focus:border-blue-500 cursor-pointer border-transparent"
           />
         </div>
       </div>
 
+      <div className="relative mx-auto container mt-12 w-fit">
+        <h1 className="text-zinc-700 text-2xl font-medium tracking-wider leading-relaxed text-center uppercase">
+          LOP Performance{'   '}
+          <span className="capitalize">
+            ({convertDate('ymden', formPeriode.start)} -{' '}
+            {convertDate('ymden', formPeriode.end)})
+          </span>
+        </h1>
+        <hr className="border-b border-zinc-200/70 mt-2 -mx-12" />
+      </div>
+
       <div className="relative mt-12 mb-4 grid grid-cols-3 gap-4">
         <div className="relative col-span-1 p-4 w-full rounded">
-          <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed mb-8">
+          <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed mb-8 hidden">
             Sales Funnel
           </h1>
           <Funnel />
@@ -151,212 +210,16 @@ export default function CRM() {
           <div className="relative grid grid-cols-2 gap-4">
             {/* Table Funnel Channel  */}
             <div className="relative p-4 col-span-2 bg-white dark:bg-zinc-900 rounded">
-              <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed">
-                Table By Channel
-              </h1>
-              <div className="relative mt-4 text-zinc-400 dark:bg-zinc-700 dark:text-zinc-400 rounded p-2 text-sm font-medium">
-                <table className="w-full">
-                  <thead className="border-b-2 border-zinc-200 dark:border-zinc-400">
-                    <tr className="text-center font-medium">
-                      <th></th>
-                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
-                        New GTMA
-                      </th>
-                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
-                        GTMA
-                      </th>
-                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
-                        Own Channel
-                      </th>
-                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
-                        TGU
-                      </th>
-                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
-                        Total
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {dataTesting?.map((item, index) =>
-                      item?.data?.map((tr, trIndex) => (
-                        <tr key={trIndex} className=" border-white">
-                          <RenderIf isTrue={trIndex === 0}>
-                            <th
-                              className="leading-relaxed w-24 bg-gradient-to-r from-blue-800  to-blue-300 p-4 text-left text-white capitalize border-b-2 border-dashed"
-                              rowSpan={item?.data?.length}>
-                              <p className="w-fit">{item.name.title}</p>
-
-                              <p className="w-fit">{item.name.sub}</p>
-                            </th>
-                          </RenderIf>
-                          {tr.map((data, indexData) => (
-                            <td
-                              className={[
-                                'bg-zinc-100/70 dark:bg-zinc-700 dark:text-zinc-100  p-2 whitespace-nowrap text-right leading-relaxed',
-                                trIndex + 1 === item.data.length
-                                  ? 'border-b-2 border-zinc-400/80 dark:border-zinc-200 border-dashed'
-                                  : 'border-none',
-                              ].join(' ')}
-                              key={indexData}>
-                              <RenderIf
-                                isTrue={
-                                  item.name.title === 'F5' && trIndex === 1
-                                }>
-                                <p className="font-extralight text-zinc-500 dark:text-zinc-100">
-                                  Rev FY 2022
-                                </p>
-                              </RenderIf>
-
-                              <RenderIf
-                                isTrue={item.name.title !== 'Convertion Ratio'}>
-                                <p
-                                  className={[
-                                    ' text-zinc-500 dark:text-zinc-100',
-
-                                    trIndex + 1 !== item.data.length
-                                      ? 'font-medium'
-                                      : 'font-light',
-                                  ].join(' ')}>
-                                  {data}{' '}
-                                  <RenderIf
-                                    isTrue={trIndex + 1 === item.data.length}>
-                                    <span> Project</span>
-                                  </RenderIf>
-                                  <RenderIf
-                                    isTrue={trIndex + 1 !== item.data.length}>
-                                    <span> M</span>
-                                  </RenderIf>
-                                </p>
-                              </RenderIf>
-
-                              <RenderIf
-                                isTrue={item.name.title === 'Convertion Ratio'}>
-                                <div className="relative flex justify-end">
-                                  <p
-                                    className={[
-                                      'font-semibold tracking-wide text-zinc-100 leading-relaxed p-2 rounded w-24 text-center text-base',
-
-                                      data > 80 && 'bg-green-500',
-                                      data < 80 && data > 50 && 'bg-orange-500',
-                                      data < 50 && 'bg-red-500',
-                                    ].join(' ')}>
-                                    {data}%
-                                  </p>
-                                </div>
-                              </RenderIf>
-                            </td>
-                          ))}
-                        </tr>
-                      )),
-                    )}
-                  </tbody>
-                </table>
-              </div>
+              <Own
+                dataHeader={dataHeaderOc}
+                data={dataTesting}
+                name="Channel"
+              />
             </div>
 
             {/* Table Funnel UBIS */}
             <div className="relative p-4 col-span-2 bg-white dark:bg-zinc-900 rounded">
-              <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed">
-                Table By UBIS
-              </h1>
-              <div className="relative mt-4 text-zinc-400 dark:bg-zinc-700 dark:text-zinc-400 rounded p-2 text-sm font-medium">
-                <table className="w-full">
-                  <thead className="border-b-2 border-zinc-200 dark:border-zinc-400">
-                    <tr className="text-center font-medium">
-                      <th></th>
-                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
-                        ENT
-                      </th>
-                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
-                        GOV
-                      </th>
-                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
-                        TSB
-                      </th>
-                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
-                        E-COM
-                      </th>
-                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
-                        Total
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {dataTesting?.map((item, index) =>
-                      item?.data?.map((tr, trIndex) => (
-                        <tr key={trIndex} className=" border-white">
-                          <RenderIf isTrue={trIndex === 0}>
-                            <th
-                              className="leading-relaxed w-24 bg-gradient-to-r from-blue-800  to-blue-300 p-4 text-left text-white capitalize border-b-2 border-dashed"
-                              rowSpan={item?.data?.length}>
-                              <p className="w-fit">{item.name.title}</p>
-
-                              <p className="w-fit">{item.name.sub}</p>
-                            </th>
-                          </RenderIf>
-                          {tr.map((data, indexData) => (
-                            <td
-                              className={[
-                                'bg-zinc-100/70 dark:bg-zinc-700 dark:text-zinc-100  p-2 whitespace-nowrap text-right leading-relaxed',
-                                trIndex + 1 === item.data.length
-                                  ? 'border-b-2 border-zinc-400/80 dark:border-zinc-200 border-dashed'
-                                  : 'border-none',
-                              ].join(' ')}
-                              key={indexData}>
-                              <RenderIf
-                                isTrue={
-                                  item.name.title === 'F5' && trIndex === 1
-                                }>
-                                <p className="font-extralight text-zinc-500 dark:text-zinc-100">
-                                  Rev FY 2022
-                                </p>
-                              </RenderIf>
-
-                              <RenderIf
-                                isTrue={item.name.title !== 'Convertion Ratio'}>
-                                <p
-                                  className={[
-                                    ' text-zinc-500 dark:text-zinc-100',
-
-                                    trIndex + 1 !== item.data.length
-                                      ? 'font-medium'
-                                      : 'font-light',
-                                  ].join(' ')}>
-                                  {data}{' '}
-                                  <RenderIf
-                                    isTrue={trIndex + 1 === item.data.length}>
-                                    <span> Project</span>
-                                  </RenderIf>
-                                  <RenderIf
-                                    isTrue={trIndex + 1 !== item.data.length}>
-                                    <span> M</span>
-                                  </RenderIf>
-                                </p>
-                              </RenderIf>
-
-                              <RenderIf
-                                isTrue={item.name.title === 'Convertion Ratio'}>
-                                <div className="relative flex justify-end">
-                                  <p
-                                    className={[
-                                      'font-semibold tracking-wide text-zinc-100 leading-relaxed p-2 rounded w-24 text-center text-base',
-
-                                      data > 80 && 'bg-green-500',
-                                      data < 80 && data > 50 && 'bg-yellow-500',
-                                      data < 50 && 'bg-red-500',
-                                    ].join(' ')}>
-                                    {data}%
-                                  </p>
-                                </div>
-                              </RenderIf>
-                            </td>
-                          ))}
-                        </tr>
-                      )),
-                    )}
-                  </tbody>
-                </table>
-              </div>
+              <Own dataHeader={dataHeaderUbis} data={dataTesting} name="UBIS" />
             </div>
           </div>
         </div>
@@ -374,8 +237,8 @@ export default function CRM() {
                 <tr className="bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed">
                   <th className="py-2">No</th>
                   <th className="py-2">UBIS</th>
-                  <th className="py-2">Nilai Project</th>
-                  <th className="py-2">Tanggal Win</th>
+                  <th className="py-2">Nilai Project (Rp)</th>
+                  <th className="py-2">Tanggal</th>
                 </tr>
               </thead>
               <tbody>
@@ -386,7 +249,7 @@ export default function CRM() {
                       className="text-center py-4 px-2 line text-zinc-500 border-zinc-200 dark:text-zinc-50 font-medium text-sm leading-10 border-b dark:border-zinc-600">
                       <td>{index + 1}</td>
                       <td>{item.ubis}</td>
-                      <td>{item.nilai.toLocaleString('id-ID')}</td>
+                      <td>Rp {item.nilai.toLocaleString('id-ID')}</td>
                       <td>{item.date}</td>
                     </tr>
                   ))}
@@ -407,8 +270,8 @@ export default function CRM() {
                 <tr className="bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed">
                   <th className="py-2">No</th>
                   <th className="py-2">UBIS</th>
-                  <th className="py-2">Nilai Project</th>
-                  <th className="py-2">Tanggal Win</th>
+                  <th className="py-2">Nilai Project (Rp)</th>
+                  <th className="py-2">Tanggal</th>
                 </tr>
               </thead>
               <tbody>
@@ -419,7 +282,7 @@ export default function CRM() {
                       className="text-center py-4 px-2 line text-zinc-500 border-zinc-200 dark:text-zinc-50 font-medium text-sm leading-10 border-b dark:border-zinc-600">
                       <td>{index + 1}</td>
                       <td>{item.ubis}</td>
-                      <td>{item.nilai.toLocaleString('id-ID')}</td>
+                      <td>Rp {item.nilai.toLocaleString('id-ID')}</td>
                       <td>{item.date}</td>
                     </tr>
                   ))}

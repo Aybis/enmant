@@ -8,12 +8,12 @@ export default function Funnel() {
     const data2 = {
       labels: [
         'F1 (Opportunity)',
-        'F2 (Proposal)',
+        `F2 (Proposal)`,
         'F3 (Bidding)',
         'F4 (Negotiation)',
         'F5 (Contract)',
       ],
-      subLabels: [' Rupiah'],
+      subLabels: [' Dalam Miliar Rupiah'],
       // colors: [
       //   ['#FF3C8E', '#FF78B1', '#FF3C8E'],
       //   ['#A0BBFF', '#EC77FF'],
@@ -27,7 +27,6 @@ export default function Funnel() {
       container: '.funnel',
       gradientDirection: 'horizontal',
       data: data2,
-      displayPercent: true,
       direction: 'vertical',
       width: 200,
       height: 650,
