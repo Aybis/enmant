@@ -4,6 +4,7 @@ import {
   LogoutIcon,
   TableIcon,
   SearchIcon,
+  BellIcon,
 } from '@heroicons/react/outline';
 import {
   ChartBarIcon as ChartBarIconSolid,
@@ -108,7 +109,7 @@ export default function Layout({ children }) {
           <div className="relative flex justify-between items-center">
             <div className="relative text-left">
               <p className="text-sm font-light text-zinc-400 dark:text-zinc-300">
-                Welcome back,t
+                Welcome back,
               </p>
               <p className="text-lg font-semibold text-zinc-700 dark:text-zinc-200 mt-1">
                 Abdul Muchtar Astria
@@ -124,7 +125,12 @@ export default function Layout({ children }) {
               </button>
             </div>
 
-            <div className="relative">
+            <div className="relative flex space-x-4 items-center ">
+              <div className="relative group cursor-pointer bg-transparent hover:bg-zinc-100 transition-all duration-300 ease-in-out p-2 rounded">
+                <div className="absolute h-2 right-2.5 w-2 bg-red-500 group-hover:shadow-red-500/50 group-hover:shadow-lg rounded-full"></div>
+                <BellIcon className="h-5 text-zinc-400 group-hover:text-zinc-700 transition-all duration-300 ease-in-out" />
+              </div>
+
               <div className="rounded-lg">
                 <img
                   src={imageApi('AM')}

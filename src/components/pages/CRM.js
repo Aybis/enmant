@@ -19,27 +19,27 @@ export default function CRM() {
 
   const dataTop = [
     {
-      ubis: 'MSS',
+      ubis: 'ENT',
       nilai: 123456000,
       date: convertDate('now'),
     },
     {
-      ubis: 'MSS',
+      ubis: 'GOV',
       nilai: 123456000,
       date: convertDate('yesterday'),
     },
     {
-      ubis: 'MSS',
+      ubis: 'TSB',
       nilai: 123456000,
       date: convertDate('now'),
     },
     {
-      ubis: 'MSS',
+      ubis: 'E-COM',
       nilai: 123456000,
       date: convertDate('now'),
     },
     {
-      ubis: 'MSS',
+      ubis: 'TSB',
       nilai: 123456000,
       date: convertDate('now'),
     },
@@ -149,95 +149,29 @@ export default function CRM() {
         </div>
         <div className="relative rounded col-span-2">
           <div className="relative grid grid-cols-2 gap-4">
-            {/* Table Top 5 Win  */}
-            <div className="relative p-4 bg-white dark:bg-zinc-900 rounded">
-              <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed">
-                Top 5 Win Project
-              </h1>
-              <div className="relative bg-white text-zinc-400 dark:bg-zinc-700 dark:text-zinc-400 rounded p-2 text-sm font-medium mt-4">
-                <table className="w-full">
-                  <thead className="border-b-2 border-zinc-200 dark:border-zinc-600">
-                    <tr className="text-center font-medium">
-                      <th className="py-2">No</th>
-                      <th className="py-2">UBIS</th>
-                      <th className="py-2">Nilai Project</th>
-                      <th className="py-2">Tanggal Win</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <RenderIf isTrue={dataTop.length > 0}>
-                      {dataTop.map((item, index) => (
-                        <tr
-                          key={index}
-                          className="text-center py-4 px-2 line text-zinc-500 border-zinc-200 dark:text-zinc-50 font-medium text-sm leading-10 border-b dark:border-zinc-600">
-                          <td>{index + 1}</td>
-                          <td>{item.ubis}</td>
-                          <td>{item.nilai.toLocaleString('id-ID')}</td>
-                          <td>{item.date}</td>
-                        </tr>
-                      ))}
-                    </RenderIf>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            {/* Table Top 5 Lose  */}
-            <div className="relative p-4 bg-white dark:bg-zinc-900 rounded">
-              <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed">
-                Top 5 Lose Project
-              </h1>
-              <div className="relative text-zinc-400 dark:bg-zinc-700 dark:text-zinc-400 rounded p-2 text-sm font-medium mt-4">
-                <table className="w-full">
-                  <thead className="border-b-2 border-zinc-200 dark:border-zinc-600">
-                    <tr className="text-center font-medium">
-                      <th className="py-2">No</th>
-                      <th className="py-2">UBIS</th>
-                      <th className="py-2">Nilai Project</th>
-                      <th className="py-2">Tanggal Win</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <RenderIf isTrue={dataTop.length > 0}>
-                      {dataTop.map((item, index) => (
-                        <tr
-                          key={index}
-                          className="text-center py-4 px-2 line text-zinc-500 border-zinc-200 dark:text-zinc-50 font-medium text-sm leading-10 border-b dark:border-zinc-600">
-                          <td>{index + 1}</td>
-                          <td>{item.ubis}</td>
-                          <td>{item.nilai.toLocaleString('id-ID')}</td>
-                          <td>{item.date}</td>
-                        </tr>
-                      ))}
-                    </RenderIf>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            {/* Table Funnel  */}
+            {/* Table Funnel Channel  */}
             <div className="relative p-4 col-span-2 bg-white dark:bg-zinc-900 rounded">
               <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed">
-                Table Sales Funnel
+                Table By Channel
               </h1>
               <div className="relative mt-4 text-zinc-400 dark:bg-zinc-700 dark:text-zinc-400 rounded p-2 text-sm font-medium">
                 <table className="w-full">
                   <thead className="border-b-2 border-zinc-200 dark:border-zinc-400">
                     <tr className="text-center font-medium">
                       <th></th>
-                      <th className="py-3 bg-zinc-100 dark:bg-zinc-500 dark:text-zinc-300 leading-relaxed text-right px-2">
+                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
                         New GTMA
                       </th>
-                      <th className="py-3 bg-zinc-100 dark:bg-zinc-500 dark:text-zinc-300 leading-relaxed text-right px-2">
+                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
                         GTMA
                       </th>
-                      <th className="py-3 bg-zinc-100 dark:bg-zinc-500 dark:text-zinc-300 leading-relaxed text-right px-2">
+                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
                         Own Channel
                       </th>
-                      <th className="py-3 bg-zinc-100 dark:bg-zinc-500 dark:text-zinc-300 leading-relaxed text-right px-2">
+                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
                         TGU
                       </th>
-                      <th className="py-3 bg-zinc-100 dark:bg-zinc-500 dark:text-zinc-300 leading-relaxed text-right px-2">
+                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
                         Total
                       </th>
                     </tr>
@@ -248,7 +182,7 @@ export default function CRM() {
                         <tr key={trIndex} className=" border-white">
                           <RenderIf isTrue={trIndex === 0}>
                             <th
-                              className="leading-relaxed w-24 bg-blue-500 p-4 text-left text-white capitalize border-b-2 border-dashed"
+                              className="leading-relaxed w-24 bg-gradient-to-r from-blue-800  to-blue-300 p-4 text-left text-white capitalize border-b-2 border-dashed"
                               rowSpan={item?.data?.length}>
                               <p className="w-fit">{item.name.title}</p>
 
@@ -258,9 +192,9 @@ export default function CRM() {
                           {tr.map((data, indexData) => (
                             <td
                               className={[
-                                'bg-zinc-100/70 dark:bg-zinc-700 dark:text-zinc-100  p-2 whitespace-nowrap text-right',
+                                'bg-zinc-100/70 dark:bg-zinc-700 dark:text-zinc-100  p-2 whitespace-nowrap text-right leading-relaxed',
                                 trIndex + 1 === item.data.length
-                                  ? 'border-b-2 border-zinc-200 border-dashed'
+                                  ? 'border-b-2 border-zinc-400/80 dark:border-zinc-200 border-dashed'
                                   : 'border-none',
                               ].join(' ')}
                               key={indexData}>
@@ -268,14 +202,21 @@ export default function CRM() {
                                 isTrue={
                                   item.name.title === 'F5' && trIndex === 1
                                 }>
-                                <p className="font-medium text-zinc-500 dark:text-zinc-100">
+                                <p className="font-extralight text-zinc-500 dark:text-zinc-100">
                                   Rev FY 2022
                                 </p>
                               </RenderIf>
 
                               <RenderIf
                                 isTrue={item.name.title !== 'Convertion Ratio'}>
-                                <p className="font-medium text-zinc-500 dark:text-zinc-100">
+                                <p
+                                  className={[
+                                    ' text-zinc-500 dark:text-zinc-100',
+
+                                    trIndex + 1 !== item.data.length
+                                      ? 'font-medium'
+                                      : 'font-light',
+                                  ].join(' ')}>
                                   {data}{' '}
                                   <RenderIf
                                     isTrue={trIndex + 1 === item.data.length}>
@@ -290,9 +231,18 @@ export default function CRM() {
 
                               <RenderIf
                                 isTrue={item.name.title === 'Convertion Ratio'}>
-                                <p className="font-medium text-zinc-500 dark:text-zinc-100">
-                                  {data}%
-                                </p>
+                                <div className="relative flex justify-end">
+                                  <p
+                                    className={[
+                                      'font-semibold tracking-wide text-zinc-100 leading-relaxed p-2 rounded w-24 text-center text-base',
+
+                                      data > 80 && 'bg-green-500',
+                                      data < 80 && data > 50 && 'bg-orange-500',
+                                      data < 50 && 'bg-red-500',
+                                    ].join(' ')}>
+                                    {data}%
+                                  </p>
+                                </div>
                               </RenderIf>
                             </td>
                           ))}
@@ -303,6 +253,179 @@ export default function CRM() {
                 </table>
               </div>
             </div>
+
+            {/* Table Funnel UBIS */}
+            <div className="relative p-4 col-span-2 bg-white dark:bg-zinc-900 rounded">
+              <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed">
+                Table By UBIS
+              </h1>
+              <div className="relative mt-4 text-zinc-400 dark:bg-zinc-700 dark:text-zinc-400 rounded p-2 text-sm font-medium">
+                <table className="w-full">
+                  <thead className="border-b-2 border-zinc-200 dark:border-zinc-400">
+                    <tr className="text-center font-medium">
+                      <th></th>
+                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
+                        ENT
+                      </th>
+                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
+                        GOV
+                      </th>
+                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
+                        TSB
+                      </th>
+                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
+                        E-COM
+                      </th>
+                      <th className="py-3 bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed text-right px-2">
+                        Total
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {dataTesting?.map((item, index) =>
+                      item?.data?.map((tr, trIndex) => (
+                        <tr key={trIndex} className=" border-white">
+                          <RenderIf isTrue={trIndex === 0}>
+                            <th
+                              className="leading-relaxed w-24 bg-gradient-to-r from-blue-800  to-blue-300 p-4 text-left text-white capitalize border-b-2 border-dashed"
+                              rowSpan={item?.data?.length}>
+                              <p className="w-fit">{item.name.title}</p>
+
+                              <p className="w-fit">{item.name.sub}</p>
+                            </th>
+                          </RenderIf>
+                          {tr.map((data, indexData) => (
+                            <td
+                              className={[
+                                'bg-zinc-100/70 dark:bg-zinc-700 dark:text-zinc-100  p-2 whitespace-nowrap text-right leading-relaxed',
+                                trIndex + 1 === item.data.length
+                                  ? 'border-b-2 border-zinc-400/80 dark:border-zinc-200 border-dashed'
+                                  : 'border-none',
+                              ].join(' ')}
+                              key={indexData}>
+                              <RenderIf
+                                isTrue={
+                                  item.name.title === 'F5' && trIndex === 1
+                                }>
+                                <p className="font-extralight text-zinc-500 dark:text-zinc-100">
+                                  Rev FY 2022
+                                </p>
+                              </RenderIf>
+
+                              <RenderIf
+                                isTrue={item.name.title !== 'Convertion Ratio'}>
+                                <p
+                                  className={[
+                                    ' text-zinc-500 dark:text-zinc-100',
+
+                                    trIndex + 1 !== item.data.length
+                                      ? 'font-medium'
+                                      : 'font-light',
+                                  ].join(' ')}>
+                                  {data}{' '}
+                                  <RenderIf
+                                    isTrue={trIndex + 1 === item.data.length}>
+                                    <span> Project</span>
+                                  </RenderIf>
+                                  <RenderIf
+                                    isTrue={trIndex + 1 !== item.data.length}>
+                                    <span> M</span>
+                                  </RenderIf>
+                                </p>
+                              </RenderIf>
+
+                              <RenderIf
+                                isTrue={item.name.title === 'Convertion Ratio'}>
+                                <div className="relative flex justify-end">
+                                  <p
+                                    className={[
+                                      'font-semibold tracking-wide text-zinc-100 leading-relaxed p-2 rounded w-24 text-center text-base',
+
+                                      data > 80 && 'bg-green-500',
+                                      data < 80 && data > 50 && 'bg-yellow-500',
+                                      data < 50 && 'bg-red-500',
+                                    ].join(' ')}>
+                                    {data}%
+                                  </p>
+                                </div>
+                              </RenderIf>
+                            </td>
+                          ))}
+                        </tr>
+                      )),
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative mt-12 grid grid-cols-2 gap-4">
+        {/* Table Top 5 Win  */}
+        <div className="relative p-4 bg-white dark:bg-zinc-900 rounded">
+          <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed">
+            Top 5 Win Project
+          </h1>
+          <div className="relative bg-white text-zinc-400 dark:bg-zinc-700 dark:text-zinc-400 rounded p-2 text-sm font-medium mt-4">
+            <table className="w-full">
+              <thead className="border-b-2 border-zinc-200 dark:border-zinc-600">
+                <tr className="bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed">
+                  <th className="py-2">No</th>
+                  <th className="py-2">UBIS</th>
+                  <th className="py-2">Nilai Project</th>
+                  <th className="py-2">Tanggal Win</th>
+                </tr>
+              </thead>
+              <tbody>
+                <RenderIf isTrue={dataTop.length > 0}>
+                  {dataTop.map((item, index) => (
+                    <tr
+                      key={index}
+                      className="text-center py-4 px-2 line text-zinc-500 border-zinc-200 dark:text-zinc-50 font-medium text-sm leading-10 border-b dark:border-zinc-600">
+                      <td>{index + 1}</td>
+                      <td>{item.ubis}</td>
+                      <td>{item.nilai.toLocaleString('id-ID')}</td>
+                      <td>{item.date}</td>
+                    </tr>
+                  ))}
+                </RenderIf>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Table Top 5 Lose  */}
+        <div className="relative p-4 bg-white dark:bg-zinc-900 rounded">
+          <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed">
+            Top 5 Lose Project
+          </h1>
+          <div className="relative text-zinc-400 dark:bg-zinc-700 dark:text-zinc-400 rounded p-2 text-sm font-medium mt-4">
+            <table className="w-full">
+              <thead className="border-b-2 border-zinc-200 dark:border-zinc-600">
+                <tr className="bg-gradient-to-b from-blue-800 to-blue-500 text-white dark:bg-zinc-500 dark:text-zinc-100 leading-relaxed">
+                  <th className="py-2">No</th>
+                  <th className="py-2">UBIS</th>
+                  <th className="py-2">Nilai Project</th>
+                  <th className="py-2">Tanggal Win</th>
+                </tr>
+              </thead>
+              <tbody>
+                <RenderIf isTrue={dataTop.length > 0}>
+                  {dataTop.map((item, index) => (
+                    <tr
+                      key={index}
+                      className="text-center py-4 px-2 line text-zinc-500 border-zinc-200 dark:text-zinc-50 font-medium text-sm leading-10 border-b dark:border-zinc-600">
+                      <td>{index + 1}</td>
+                      <td>{item.ubis}</td>
+                      <td>{item.nilai.toLocaleString('id-ID')}</td>
+                      <td>{item.date}</td>
+                    </tr>
+                  ))}
+                </RenderIf>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

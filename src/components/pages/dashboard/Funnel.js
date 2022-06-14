@@ -14,11 +14,12 @@ export default function Funnel() {
         'F5 (Contract)',
       ],
       subLabels: [' Rupiah'],
-      colors: [
-        ['#FFB178', '#FF78B1', '#FF3C8E'],
-        ['#A0BBFF', '#EC77FF'],
-        ['#A0F9FF', '#7795FF'],
-      ],
+      // colors: [
+      //   ['#FF3C8E', '#FF78B1', '#FF3C8E'],
+      //   ['#A0BBFF', '#EC77FF'],
+      //   ['#A0F9FF', '#7795FF'],
+      // ],
+      colors: [['#1e40af', '#93c5fd']],
       values: [[2000], [1800], [1600], [1400], [1000]],
     };
 
