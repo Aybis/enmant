@@ -7,7 +7,6 @@ export default function Funnel() {
   useEffect(() => {
     const data2 = {
       labels: [
-        'F0 (Lead)',
         'F1 (Opportunity)',
         'F2 (Proposal)',
         'F3 (Bidding)',
@@ -20,7 +19,7 @@ export default function Funnel() {
         ['#A0BBFF', '#EC77FF'],
         ['#A0F9FF', '#7795FF'],
       ],
-      values: [[2500], [2500], [1000], [900], [800], [400]],
+      values: [[2000], [1800], [1600], [1400], [1000]],
     };
 
     const graph = new FunnelGraph({

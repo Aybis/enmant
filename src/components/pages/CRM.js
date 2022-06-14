@@ -150,7 +150,7 @@ export default function CRM() {
         <div className="relative rounded col-span-2">
           <div className="relative grid grid-cols-2 gap-4">
             {/* Table Top 5 Win  */}
-            <div className="relative p-4 bg-white dark:bg-none rounded">
+            <div className="relative p-4 bg-white dark:bg-zinc-900 rounded">
               <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed">
                 Top 5 Win Project
               </h1>
@@ -183,7 +183,7 @@ export default function CRM() {
             </div>
 
             {/* Table Top 5 Lose  */}
-            <div className="relative p-4 bg-white dark:bg-none rounded">
+            <div className="relative p-4 bg-white dark:bg-zinc-900 rounded">
               <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed">
                 Top 5 Lose Project
               </h1>
@@ -216,29 +216,29 @@ export default function CRM() {
             </div>
 
             {/* Table Funnel  */}
-            <div className="relative p-4 col-span-2 bg-white rounded">
+            <div className="relative p-4 col-span-2 bg-white dark:bg-zinc-900 rounded">
               <h1 className="text-zinc-800 dark:text-zinc-100 font-semibold text-lg leading-relaxed">
                 Table Sales Funnel
               </h1>
               <div className="relative mt-4 text-zinc-400 dark:bg-zinc-700 dark:text-zinc-400 rounded p-2 text-sm font-medium">
                 <table className="w-full">
-                  <thead className="border-b-2 border-zinc-200 dark:border-zinc-600">
+                  <thead className="border-b-2 border-zinc-200 dark:border-zinc-400">
                     <tr className="text-center font-medium">
                       <th></th>
-                      <th className="py-3 bg-zinc-100 text-right px-2">
-                        GTMA0
+                      <th className="py-3 bg-zinc-100 dark:bg-zinc-500 dark:text-zinc-300 leading-relaxed text-right px-2">
+                        New GTMA
                       </th>
-                      <th className="py-3 bg-zinc-100 text-right px-2">
-                        GTMA1
+                      <th className="py-3 bg-zinc-100 dark:bg-zinc-500 dark:text-zinc-300 leading-relaxed text-right px-2">
+                        GTMA
                       </th>
-                      <th className="py-3 bg-zinc-100 text-right px-2">
-                        GTMA2
+                      <th className="py-3 bg-zinc-100 dark:bg-zinc-500 dark:text-zinc-300 leading-relaxed text-right px-2">
+                        Own Channel
                       </th>
-                      <th className="py-3 bg-zinc-100 text-right px-2">
-                        GTMA3
+                      <th className="py-3 bg-zinc-100 dark:bg-zinc-500 dark:text-zinc-300 leading-relaxed text-right px-2">
+                        TGU
                       </th>
-                      <th className="py-3 bg-zinc-100 text-right px-2">
-                        GTMA4
+                      <th className="py-3 bg-zinc-100 dark:bg-zinc-500 dark:text-zinc-300 leading-relaxed text-right px-2">
+                        Total
                       </th>
                     </tr>
                   </thead>
@@ -258,7 +258,7 @@ export default function CRM() {
                           {tr.map((data, indexData) => (
                             <td
                               className={[
-                                'bg-zinc-100/70ada  p-2 whitespace-nowrap text-right',
+                                'bg-zinc-100/70 dark:bg-zinc-700 dark:text-zinc-100  p-2 whitespace-nowrap text-right',
                                 trIndex + 1 === item.data.length
                                   ? 'border-b-2 border-zinc-200 border-dashed'
                                   : 'border-none',
@@ -268,14 +268,14 @@ export default function CRM() {
                                 isTrue={
                                   item.name.title === 'F5' && trIndex === 1
                                 }>
-                                <p className="font-medium text-zinc-500">
+                                <p className="font-medium text-zinc-500 dark:text-zinc-100">
                                   Rev FY 2022
                                 </p>
                               </RenderIf>
 
                               <RenderIf
                                 isTrue={item.name.title !== 'Convertion Ratio'}>
-                                <p className="font-medium text-zinc-500">
+                                <p className="font-medium text-zinc-500 dark:text-zinc-100">
                                   {data}{' '}
                                   <RenderIf
                                     isTrue={trIndex + 1 === item.data.length}>
@@ -290,7 +290,7 @@ export default function CRM() {
 
                               <RenderIf
                                 isTrue={item.name.title === 'Convertion Ratio'}>
-                                <p className="font-medium text-zinc-500">
+                                <p className="font-medium text-zinc-500 dark:text-zinc-100">
                                   {data}%
                                 </p>
                               </RenderIf>
