@@ -1,50 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.funnel {
-  font-family: sans-serif;
-  text-align: center;
-}
-
-.svg-funnel-js {
-  display: inline-block;
-  position: relative;
-}
-.svg-funnel-js svg {
-  display: block;
-}
-.svg-funnel-js .svg-funnel-js__labels {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-.svg-funnel-js.svg-funnel-js--vertical .svg-funnel-js__labels {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 body {
   -webkit-font-smoothing: antialiased;
@@ -56,9 +9,10 @@ body {
 .svg-funnel-js .svg-funnel-js__container {
   width: 100%;
   height: 100%;
+  /* margin-left: -14rem; */
 }
 .svg-funnel-js .svg-funnel-js__labels {
-  width: 100%;
+  /* width: 100%; */
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -70,19 +24,19 @@ body {
 }
 .svg-funnel-js .svg-funnel-js__labels .svg-funnel-js__label .label__value {
   font-size: 24px;
-  color: #fff;
+  color: #71717a;
   line-height: 18px;
   margin-bottom: 6px;
 }
 .svg-funnel-js .svg-funnel-js__labels .svg-funnel-js__label .label__title {
   font-size: 12px;
   font-weight: 700;
-  color: #21ffa2;
+  color: #52525b;
 }
 .svg-funnel-js .svg-funnel-js__labels .svg-funnel-js__label .label__percentage {
   font-size: 16px;
   font-weight: 700;
-  color: #9896dc;
+  color: #18181b;
 }
 .svg-funnel-js
   .svg-funnel-js__labels
@@ -195,13 +149,13 @@ body {
   display: -ms-flexbox;
   display: flex;
   font-size: 12px;
-  color: #fff;
+  color: #000;
   line-height: 16px;
 }
 .svg-funnel-js
   .svg-funnel-js__subLabels
   .svg-funnel-js__subLabel:not(:first-child) {
-  margin-left: 16px;
+  margin-left: 0px;
 }
 .svg-funnel-js
   .svg-funnel-js__subLabels
@@ -210,5 +164,5 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  margin: 2px 8px 2px 0;
+  margin: 2px 0px 2px 0;
 }

@@ -13,6 +13,7 @@
     "chartjs-plugin-datalabels": "^2.0.0",
     "faker": "^6.6.6",
     "framer-motion": "^6.3.7",
+    "funnel-graph-js": "^1.4.2",
     "js-cookie": "^3.0.1",
     "react": "^18.1.0",
     "react-chartjs-2": "^4.1.0",

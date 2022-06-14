@@ -99,10 +99,10 @@ export default function Home() {
 
       {/* Filter Month */}
       <div className="relative mx-auto container max-w-md grid grid-cols-2 gap-4 mt-6">
-        <select className="px-4 py-2 rounded-sm bg-white dark:bg-zinc-200 dark:text-zinc-900 border-2 pr-8 border-transparent focus:border-blue-500 cursor-pointer">
+        <select className="px-4 py-2 rounded-sm bg-white dark:bg-zinc-700 dark:text-zinc-50 border-2 pr-8 border-transparent focus:border-blue-500 cursor-pointer">
           <option value="">June</option>
         </select>
-        <select className="px-4 py-2 rounded-sm bg-white dark:bg-zinc-200 dark:text-zinc-900 border-2 pr-8 border-transparent focus:border-blue-500 cursor-pointer">
+        <select className="px-4 py-2 rounded-sm bg-white dark:bg-zinc-700 dark:text-zinc-50 border-2 pr-8 border-transparent focus:border-blue-500 cursor-pointer">
           <option value="">2022</option>
         </select>
       </div>
